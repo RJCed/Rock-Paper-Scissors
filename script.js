@@ -17,40 +17,37 @@ function getComputerChoice(){
     }   
 }
 
-console.log(getComputerChoice())
+console.log("Computer: " + getComputerChoice())
 
 function getHumanChoice(){
-    
-    // (1) reprompt- VARIABLE equal to true
-    // (2) WHILE reprompt is equal to true
-        // (3) choice-VARIABLE is equal to prompt of user "rock", "paper", "scissors"
-        // (4) IF choice(Lower Case) is equal to "rock"
-            // RETURN "rock"
-            // reprompt is equal to false
-        // (5) ELSE IF choice(Lower Case) is equal to "paper" 
-            // RETURN "paper"
-            // reprompt is equal to false
-        // (6) ELSE IF choice(Lower Case) is equal to "scissors" 
-            // RETURN "scissors"
-            // reprompt is equal to false
-        // (7) ELSE 
-            // ALERT INVALID CHOICE
-            // reprompt equal to true
 
-    let reprompt = true; // (1)
+    let reprompt = true;
 
-    while (reprompt == true) { // (2)
-        const choice = prompt("Make your choice! \nRock, Paper, or Scissors "); // (3)
-        if (choice.toLowerCase() == "rock"){ // (4)
+    while (reprompt == true) {
+        
+        // User Input
+        let choice = prompt("Make your choice! \nRock, Paper, or Scissors "); // (3)
+
+
+        //CHECK IF EQUALS TO NULL (CLICKED CLOSE) and make it lower case
+        if (choice == null){
+            alert("Finish the Game")
+            continue;
+        } else {
+            choice = choice.toLowerCase()
+        }
+
+        //Returns the User's Input
+        if (choice == "rock"){ // convert this into switch in the future, but for now it works
             return "rock";
             reprompt = false
-        } else if (choice.toLowerCase() == "paper"){ //(5)
+        } else if (choice == "paper"){
             return "paper";
             reprompt = false
-        } else if (choice.toLowerCase() == "scissors"){ // (6)
+        } else if (choice == "scissors"){
             return "scissors";
             reprompt = false
-        } else { //(7)
+        } else { //Take into account user not choosing Rock, Paper, or Scissors (also undefined)
             alert("Invalid Choice!")
             reprompt = true
         }
