@@ -16,8 +16,7 @@ function getComputerChoice(){
         return "getComputerChoice error";
     }   
 }
-
-console.log("Computer: " + getComputerChoice())
+console.log("Computer Previous: " + getComputerChoice())
 
 function getHumanChoice(){
 
@@ -54,4 +53,61 @@ function getHumanChoice(){
     }
 }
 
-console.log("Human: " + getHumanChoice())
+
+
+let humanScore = 0;
+let computerScore = 0;
+
+function playRound(humanChoice, computerChoice){
+    // IF humanChoice is "rock" and computer choice is "scissors"
+        // add one to human score
+        // Alert You Win
+    // ELSE IF humanChoice is "rock" and computer choice is "paper"
+        // add one to computer score
+        // Alert You Lose
+    // ELSE IF (DO THIS TO PAPER AND SCISSORS AS WELL)
+    // ELSE (humanChoice and computerChoice are equal)
+        // Alert TIE
+    
+
+    
+    if (humanChoice == "rock" && computerChoice == "scissors"){ // FOR HUMAN ROCK
+        humanScore = humanScore + 1;
+        alert("You Win! Rock Beats Scissors")
+    } else if (humanChoice == "rock" && computerChoice == "paper"){
+        computerScore = computerScore + 1;
+        alert("You Lose! Paper Beats Rock")
+
+
+    } else if (humanChoice == "paper" && computerChoice == "rock"){ // FOR HUMAN PAPER
+        humanScore = humanScore + 1;
+        alert("You Win! Paper Beats Rock")
+    } else if (humanChoice == "paper" && computerChoice == "scissors"){
+        computerScore = computerScore + 1;
+        alert("You Lose! Scissors Beats Paper")
+
+
+    } else if (humanChoice == "scissors" && computerChoice == "paper"){ // FOR HUMAN SCISSORS
+        humanScore = humanScore + 1;
+        alert("You Win! Scissors Beats Paper")
+    } else if (humanChoice == "scissors" && computerChoice == "Rock"){
+        computerScore = computerScore + 1;
+        alert("You Lose! Rock Beats Scissors")
+    } else {
+        alert("Its a Tie!")
+    }
+
+    
+    
+
+    
+    
+}
+
+function playGame(rounds) {
+    const humanSelection = getHumanChoice();
+    const computerSelection = getComputerChoice();
+
+    playRound(humanSelection, computerSelection);
+}
+    
