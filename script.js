@@ -138,6 +138,9 @@ while (isInt == false){
     if (isNaN(numRound)){
         alert("Not A Number")
         continue;
+    } else if (numRound == 0){
+        alert("Invalid Number")
+        continue;
     } else {
         rounds = numRound;
         isInt = true;
