@@ -1,3 +1,4 @@
+//Get Computer Choice
 function getComputerChoice(){
     // randomGen VARIABLE generate number between 0 - 0.999...
     const randomGen = Math.random()
@@ -16,8 +17,8 @@ function getComputerChoice(){
         return "getComputerChoice error";
     }   
 }
-console.log("Computer Previous: " + getComputerChoice())
 
+//Get Human Choice
 function getHumanChoice(){
 
     let reprompt = true;
@@ -53,11 +54,10 @@ function getHumanChoice(){
     }
 }
 
-
-
 let humanScore = 0;
 let computerScore = 0;
 
+//Logic for each Round
 function playRound(humanChoice, computerChoice){
     // IF humanChoice is "rock" and computer choice is "scissors"
         // add one to human score
@@ -104,10 +104,37 @@ function playRound(humanChoice, computerChoice){
     
 }
 
-function playGame(rounds) {
-    const humanSelection = getHumanChoice();
-    const computerSelection = getComputerChoice();
 
-    playRound(humanSelection, computerSelection);
-}
+//Plays round for a specific amount
+function playGame(rounds) {
+    // FOR each iteration (depends on how many rounds)
+        //run playRound
+    //Get the Total Score 
+
+    for(let i = 0; i < rounds; i++){
+        const humanSelection = getHumanChoice();
+        const computerSelection = getComputerChoice();
+        playRound(humanSelection, computerSelection);
+    }
     
+    alert("You: "+ humanScore + " Computer: " + computerScore)
+}
+
+
+
+let isInt = false;
+let rounds = 0;
+while (isInt == false){
+    let numRound = prompt("How many rounds would you like to play? ")
+
+    if (isNaN(numRound)){
+        alert("Not A Number")
+        continue;
+    } else {
+        rounds = numRound;
+        isInt = true;
+    }
+    
+}
+
+playGame(rounds)
