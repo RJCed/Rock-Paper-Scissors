@@ -117,7 +117,15 @@ function playGame(rounds) {
         playRound(humanSelection, computerSelection);
     }
     
-    alert("You: "+ humanScore + " Computer: " + computerScore)
+    //Win or lose condition
+    if (humanScore > computerScore){
+        alert("YOU WIN!\n" + "You: "+ humanScore + " Computer: " + computerScore)
+    } else if (humanScore < computerScore){
+        alert("YOU LOSE!\n" + "You: "+ humanScore + " Computer: " + computerScore)
+    } else {
+        alert("It's a tie!")
+    }
+    
 }
 
 
