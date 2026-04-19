@@ -3,17 +3,20 @@ function getComputerChoice(){
     // randomGen VARIABLE generate number between 0 - 0.999...
     const randomGen = Math.random()
     
+    // Assign each random number from 0 - 0.999... to rock, paper, or scissors
+    // This separates them into region as follows:
+    // Region 1/3 (0.333...) below RETURN "scissors"
+    // Region 2/3 (0.666...) below (until 1/3) RETURN "paper"
+    // Region 1 and below (until 2/3) RETURN "rock"
+    // ELSE RETURN "getComputerChoice error"
+
     if (randomGen < 1 / 3){ 
-        // IF randomGen is less than 1/3 RETURN "scissors"
         return "scissors";
     } else if (randomGen < 2 / 3){
-        // ELSE IF randomGen is less than 2/3 RETURN "paper"
         return "paper";
     } else if (randomGen < 1){
-        // ELSE IF randomGen is less than 1 RETURN "rock"
         return "rock";
     } else {
-        // ELSE RETURN "getComputerChoice error"
         return "getComputerChoice error";
     }   
 }
@@ -29,7 +32,7 @@ function getHumanChoice(){
         let choice = prompt("Make your choice! \nRock, Paper, or Scissors "); // (3)
 
 
-        //CHECK IF EQUALS TO NULL (CLICKED CLOSE) and make it lower case
+        //CHECK IF EQUALS TO NULL (USER CLICKED CLOSE) and if not, make input lower case
         if (choice == null){
             alert("Finish the Game")
             continue;
@@ -37,7 +40,7 @@ function getHumanChoice(){
             choice = choice.toLowerCase()
         }
 
-        //Returns the User's Input
+        //Returns the User's Input (Rock, Paper, Scissors)
         if (choice == "rock"){ // convert this into switch in the future, but for now it works
             return "rock";
             reprompt = false
@@ -61,10 +64,12 @@ let computerScore = 0;
 function playRound(humanChoice, computerChoice){
     // IF humanChoice is "rock" and computer choice is "scissors"
         // add one to human score
-        // Alert You Win
+        // Alert You Win (Rock Beats Scissors)
+
     // ELSE IF humanChoice is "rock" and computer choice is "paper"
         // add one to computer score
-        // Alert You Lose
+        // Alert You Lose (Paper Beats Rock)
+
     // ELSE IF (DO THIS TO PAPER AND SCISSORS AS WELL)
     // ELSE (humanChoice and computerChoice are equal)
         // Alert TIE
@@ -117,19 +122,19 @@ function playGame(rounds) {
         playRound(humanSelection, computerSelection);
     }
     
-    //Win or lose condition
+    //Win or lose condition (Alert Who has the higher score Human vs Computer)
     if (humanScore > computerScore){
         alert("YOU WIN!\n" + "You: "+ humanScore + " Computer: " + computerScore)
     } else if (humanScore < computerScore){
         alert("YOU LOSE!\n" + "You: "+ humanScore + " Computer: " + computerScore)
     } else {
-        alert("It's a tie!")
+        alert("It's a tie!\n" + "You: "+ humanScore + " Computer: " + computerScore)
     }
     
 }
 
 
-
+// This ask the user how many rounds are to be played
 let isInt = false;
 let rounds = 0;
 while (isInt == false){
@@ -138,7 +143,7 @@ while (isInt == false){
     if (isNaN(numRound)){
         alert("Not A Number")
         continue;
-    } else if (numRound == 0){
+    } else if (numRound == 0 || numRound == null){
         alert("Invalid Number")
         continue;
     } else {
