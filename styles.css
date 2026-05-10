@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Doto:wght@100..900&display=swap');
+
+
+*{
+    font-family: "Doto", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: <weight>;
+    font-style: normal;
+    font-variation-settings:
+    "ROND" 0;
+    
+    
+    background-color: #FFF6F6;
+    color: #DB1A1A;
+    margin: 0;
+    padding: 0;
+    
+}
+
+#screen{
+    border: 2px solid red;
+    
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+
+}
+
+
+
+
+/* Upper Side, includes results, score etc */
+
+#upper{
+    border: 1px solid red;
+
+    min-width: 100%;
+    min-height: 50vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/* Center Results */
+
+#result{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+
+#result h2{
+    margin-top: 10px;
+}
+
+
+/* User Choice */
+
+#userChoice{
+    border: 1px solid red;
+}
+
+/* Computer Choice */
+
+#comChoice{
+    border: 1px solid red;
+}
+
+
+/* Lower side includes buttons */
+
+#lower{
+    min-width: 100%;
+    min-height: 50vh;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
