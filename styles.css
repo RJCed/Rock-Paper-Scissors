@@ -42,34 +42,51 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    
 }
 
 /* Center Results */
 
 #result{
+
+    border: 1px solid red;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    text-align: center;
+}
 
+#result h1{
+    border: 1px solid red;
+    font-size: 3.5vw;
 }
 
 #result h2{
+    border: 1px solid red;
     margin-top: 10px;
+    font-size: 2.5vw;
 }
 
 
-/* User Choice */
+/* User and Computer Choice */
 
-#userChoice{
+.choice{
     border: 1px solid red;
+
+    width: 100%;
+    max-width: 210px;
+    aspect-ratio: 1 / 1;
+    margin: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 0;
+
 }
 
-/* Computer Choice */
 
-#comChoice{
-    border: 1px solid red;
-}
 
 
 /* Lower side includes buttons */
