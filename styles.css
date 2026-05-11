@@ -14,11 +14,11 @@
     color: #DB1A1A;
     margin: 0;
     padding: 0;
-    
+    box-sizing: border-box;
 }
 
 #screen{
-    border: 2px solid red;
+    /* border: 2px solid red; */
     
     min-height: 100vh;
     display: flex;
@@ -37,11 +37,11 @@
     border: 1px solid red;
 
     min-width: 100%;
-    min-height: 50vh;
-
+    height: 50vh;
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    /* flex: 1; */
     
 }
 
@@ -55,6 +55,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+
     
 }
 
@@ -85,6 +86,8 @@
     align-items: center;
     flex: 1 1 0;
 
+    font-size: 2vw;
+
 }
 
 
@@ -93,23 +96,31 @@
 /* Lower side includes buttons */
 
 #lower{
+    border: 1px solid red;
     min-width: 100%;
-    min-height: 50vh;
+    gap: 20px;
 
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    flex: 1;
 }
 
 #lower button{
     max-width: 210px;
     width: 100%;
     aspect-ratio: 1 / 1;
-    margin: 10px;
+    line-height: 3.5;
 
     display: flex;
     justify-content: center;
     align-items: center;
-    flex: 1 1 0;
+}
+
+@media screen and (max-width:480px) {
+    #lower button{
+        max-width: 150px;
+        aspect-ratio: 1 / 1;
+    }
 }
