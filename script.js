@@ -183,6 +183,34 @@ const getComputerChoice = function(){
     }   
 }
 
+const changeChoiceDisplay = function(humanChoice, computerChoice){
+    let humanDisplay = document.querySelector("#humanChoice");
+    let computerDisplay = document.querySelector("#computerChoice");
+
+    // For humanChoice
+    switch (humanChoice) {
+        case "paper":
+            humanDisplay.textContent = "🫱";
+            break;
+        case "scissors":
+            humanDisplay.textContent = "✌️";
+            break;
+        default:
+            humanDisplay.textContent = "🤜";
+    }
+
+    //for computerChoice
+    switch (computerChoice) {
+        case "paper":
+            computerDisplay.textContent = "🫲";
+            break;
+        case "scissors":
+            computerDisplay.textContent = "✌️";
+            break;
+        default:
+            computerDisplay.textContent = "🤛";
+    }
+}
 
 //Logic for each Round
 const playRound = function(humanChoice, computerChoice){
@@ -236,19 +264,25 @@ const playRound = function(humanChoice, computerChoice){
 
 
 // Event for What button is clicked
-let buttons = document.querySelector('#lower');
+let buttons = document.getElementById('lower');
 buttons.addEventListener('click', (event) => {
     let target = event.target;
 
+    //run the getComputerChoice to be used for different functions
+    let computerValue = getComputerChoice();
+
     switch(target.id) {
         case 'rock':
-            playRound("rock", getComputerChoice())
+            playRound("rock", computerValue)
+            changeChoiceDisplay("rock", computerValue);
             break;
         case 'paper':
-            playRound("paper", getComputerChoice());
+            playRound("paper", computerValue);
+            changeChoiceDisplay("paper", computerValue);
             break;
         case 'scissors':
-            playRound("scissors", getComputerChoice());
+            playRound("scissors", computerValue);
+            changeChoiceDisplay("scissors", computerValue);
             break;
     }
 });
