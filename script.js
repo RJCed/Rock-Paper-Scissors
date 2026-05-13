@@ -154,3 +154,107 @@
 // }
 
 // playGame(rounds)
+
+
+let humanScore = 0;
+let computerScore = 0;
+
+
+
+//Get Computer Choice
+const getComputerChoice = function(){
+    // randomGen VARIABLE generate number between 0 - 0.999...
+    const randomGen = Math.random()
+    
+    // Assign each random number from 0 - 0.999... to rock, paper, or scissors
+    // This separates them into region as follows:
+    // Region 1/3 (0.333...) below RETURN "scissors"
+    // Region 2/3 (0.666...) below (until 1/3) RETURN "paper"
+    // Region 1 and below (until 2/3) RETURN "rock"
+    // ELSE RETURN "getComputerChoice error"
+
+    if (randomGen < 1 / 3){ 
+        return "scissors";
+    } else if (randomGen < 2 / 3){
+        return "paper";
+    } else if (randomGen < 1){
+        return "rock";
+    } else {
+        return "getComputerChoice error";
+    }   
+}
+
+
+//Logic for each Round
+const playRound = function(humanChoice, computerChoice){
+    // IF humanChoice is "rock" and computer choice is "scissors"
+        // add one to human score
+        // Alert You Win (Rock Beats Scissors)
+
+    // ELSE IF humanChoice is "rock" and computer choice is "paper"
+        // add one to computer score
+        // Alert You Lose (Paper Beats Rock)
+
+    // ELSE IF (DO THIS TO PAPER AND SCISSORS AS WELL)
+    // ELSE (humanChoice and computerChoice are equal)
+        // Alert TIE
+    
+
+    
+    if (humanChoice === "rock" && computerChoice === "scissors"){ // FOR HUMAN ROCK
+        humanScore = humanScore + 1;
+        alert("You Win! Rock Beats Scissors")
+    } else if (humanChoice === "rock" && computerChoice === "paper"){
+        computerScore = computerScore + 1;
+        alert("You Lose! Paper Beats Rock")
+
+
+    }
+    
+    if (humanChoice === "paper" && computerChoice === "rock"){ // FOR HUMAN PAPER
+        humanScore = humanScore + 1;
+        alert("You Win! Paper Beats Rock")
+    } else if (humanChoice === "paper" && computerChoice === "scissors"){
+        computerScore = computerScore + 1;
+        alert("You Lose! Scissors Beats Paper")
+
+
+    }
+    
+    if (humanChoice === "scissors" && computerChoice === "paper"){ // FOR HUMAN SCISSORS
+        humanScore = humanScore + 1;
+        alert("You Win! Scissors Beats Paper")
+    } else if (humanChoice === "scissors" && computerChoice === "Rock"){
+        computerScore = computerScore + 1;
+        alert("You Lose! Rock Beats Scissors")
+    }
+    
+    if (humanChoice === computerChoice){
+        alert("Its a Tie!")
+    }
+   
+}
+
+
+// Event for What button is clicked
+let buttons = document.querySelector('#lower');
+
+buttons.addEventListener('click', (event) => {
+    let target = event.target;
+
+    switch(target.id) {
+        case 'rock':
+            playRound("rock", getComputerChoice())
+            break;
+        case 'paper':
+            playRound("paper", getComputerChoice());
+            break;
+        case 'scissors':
+            playRound("scissors", getComputerChoice());
+            break;
+    }
+});
+
+
+
+
