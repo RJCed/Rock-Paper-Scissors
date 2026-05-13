@@ -1,4 +1,4 @@
-// //Get Computer Choice
+// //Old Code (NO UI)
 // function getComputerChoice(){
 //     // randomGen VARIABLE generate number between 0 - 0.999...
 //     const randomGen = Math.random()
@@ -160,7 +160,6 @@ let humanScore = 0;
 let computerScore = 0;
 
 
-
 //Get Computer Choice
 const getComputerChoice = function(){
     // randomGen VARIABLE generate number between 0 - 0.999...
@@ -238,7 +237,6 @@ const playRound = function(humanChoice, computerChoice){
 
 // Event for What button is clicked
 let buttons = document.querySelector('#lower');
-
 buttons.addEventListener('click', (event) => {
     let target = event.target;
 
