@@ -252,7 +252,7 @@ const playRound = function(humanChoice, computerChoice){
     if (humanChoice === "scissors" && computerChoice === "paper"){ // FOR HUMAN SCISSORS
         humanScore = humanScore + 1;
         changeResultDisplay("You Win! Scissors Beats Paper", humanScore, computerScore);
-    } else if (humanChoice === "scissors" && computerChoice === "Rock"){
+    } else if (humanChoice === "scissors" && computerChoice === "rock"){
         computerScore = computerScore + 1;
         changeResultDisplay("You Lose! Rock Beats Scissors", humanScore, computerScore);
     }
