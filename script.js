@@ -1,4 +1,5 @@
 // //Old Code (NO UI)
+// // Get Computer Choice
 // function getComputerChoice(){
 //     // randomGen VARIABLE generate number between 0 - 0.999...
 //     const randomGen = Math.random()
@@ -183,6 +184,7 @@ const getComputerChoice = function(){
     }   
 }
 
+// Change the Display of 'User' or 'Computer' choices on 'upper'
 const changeChoiceDisplay = function(humanChoice, computerChoice){
     let humanDisplay = document.querySelector("#humanChoice");
     let computerDisplay = document.querySelector("#computerChoice");
@@ -212,65 +214,66 @@ const changeChoiceDisplay = function(humanChoice, computerChoice){
     }
 }
 
-//Logic for each Round
-const playRound = function(humanChoice, computerChoice){
-    // IF humanChoice is "rock" and computer choice is "scissors"
-        // add one to human score
-        // Alert You Win (Rock Beats Scissors)
-
-    // ELSE IF humanChoice is "rock" and computer choice is "paper"
-        // add one to computer score
-        // Alert You Lose (Paper Beats Rock)
-
-    // ELSE IF (DO THIS TO PAPER AND SCISSORS AS WELL)
-    // ELSE (humanChoice and computerChoice are equal)
-        // Alert TIE
+//Change the center texts in upper
+const changeResultDisplay = function(result, humanScore, computerScore){
+    const upperResultText = document.querySelector("#upperResultText")
+    const lowerResultText = document.querySelector("#lowerResultText")
     
+    //change the upperResultText to the result. Default - "Rock Paper Scissors"
+    upperResultText.textContent = result;
+    
+    //change the lowerResultText to the current score/
+    lowerResultText.textContent = 'You: ' + humanScore + " Computer: " + computerScore;
+}
 
+//Logic for each Round (also run the function changeResultDisplay)
+const playRound = function(humanChoice, computerChoice){
     
     if (humanChoice === "rock" && computerChoice === "scissors"){ // FOR HUMAN ROCK
         humanScore = humanScore + 1;
-        alert("You Win! Rock Beats Scissors")
+        changeResultDisplay("You Win! Rock Beats Scissors", humanScore, computerScore)
     } else if (humanChoice === "rock" && computerChoice === "paper"){
         computerScore = computerScore + 1;
-        alert("You Lose! Paper Beats Rock")
+        changeResultDisplay("You Lose! Paper Beats Rock", humanScore, computerScore);
 
 
     }
     
     if (humanChoice === "paper" && computerChoice === "rock"){ // FOR HUMAN PAPER
         humanScore = humanScore + 1;
-        alert("You Win! Paper Beats Rock")
+        changeResultDisplay("You Win! Paper Beats Rock", humanScore, computerScore);
     } else if (humanChoice === "paper" && computerChoice === "scissors"){
         computerScore = computerScore + 1;
-        alert("You Lose! Scissors Beats Paper")
+        changeResultDisplay("You Lose! Scissors Beats Paper", humanScore, computerScore);
 
 
     }
     
     if (humanChoice === "scissors" && computerChoice === "paper"){ // FOR HUMAN SCISSORS
         humanScore = humanScore + 1;
-        alert("You Win! Scissors Beats Paper")
+        changeResultDisplay("You Win! Scissors Beats Paper", humanScore, computerScore);
     } else if (humanChoice === "scissors" && computerChoice === "Rock"){
         computerScore = computerScore + 1;
-        alert("You Lose! Rock Beats Scissors")
+        changeResultDisplay("You Lose! Rock Beats Scissors", humanScore, computerScore);
     }
     
     if (humanChoice === computerChoice){
-        alert("Its a Tie!")
+        changeResultDisplay("Its a Tie!", humanScore, computerScore);
     }
    
 }
 
 
-// Event for What button is clicked
+// Event for What button is clicked (Uses the "lower" id as a reference)
 let buttons = document.getElementById('lower');
+//get click event for each button
 buttons.addEventListener('click', (event) => {
     let target = event.target;
 
-    //run the getComputerChoice to be used for different functions
+    //run the getComputerChoice to be used for different functions below
     let computerValue = getComputerChoice();
 
+    //
     switch(target.id) {
         case 'rock':
             playRound("rock", computerValue)

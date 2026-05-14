@@ -59,12 +59,12 @@
     
 }
 
-#result h1{
+#upperResultText{
     border: 1px solid red;
     font-size: 3.5vw;
 }
 
-#result h2{
+#lowerResultText{
     border: 1px solid red;
     margin-top: 10px;
     font-size: 2.5vw;
