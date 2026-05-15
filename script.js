@@ -231,34 +231,34 @@ const playRound = function(humanChoice, computerChoice){
     
     if (humanChoice === "rock" && computerChoice === "scissors"){ // FOR HUMAN ROCK
         humanScore = humanScore + 1;
-        changeResultDisplay("You Win! Rock Beats Scissors", humanScore, computerScore)
+        changeResultDisplay("You Win! Rock\nBeats Scissors", humanScore, computerScore)
     } else if (humanChoice === "rock" && computerChoice === "paper"){
         computerScore = computerScore + 1;
-        changeResultDisplay("You Lose! Paper Beats Rock", humanScore, computerScore);
+        changeResultDisplay("You Lose! Paper\nBeats Rock", humanScore, computerScore);
 
 
     }
     
     if (humanChoice === "paper" && computerChoice === "rock"){ // FOR HUMAN PAPER
         humanScore = humanScore + 1;
-        changeResultDisplay("You Win! Paper Beats Rock", humanScore, computerScore);
+        changeResultDisplay("You Win! Paper\nBeats Rock", humanScore, computerScore);
     } else if (humanChoice === "paper" && computerChoice === "scissors"){
         computerScore = computerScore + 1;
-        changeResultDisplay("You Lose! Scissors Beats Paper", humanScore, computerScore);
+        changeResultDisplay("You Lose! Scissors\nBeats Paper", humanScore, computerScore);
 
 
     }
     
     if (humanChoice === "scissors" && computerChoice === "paper"){ // FOR HUMAN SCISSORS
         humanScore = humanScore + 1;
-        changeResultDisplay("You Win! Scissors Beats Paper", humanScore, computerScore);
+        changeResultDisplay("You Win! Scissors\nBeats Paper", humanScore, computerScore);
     } else if (humanChoice === "scissors" && computerChoice === "rock"){
         computerScore = computerScore + 1;
-        changeResultDisplay("You Lose! Rock Beats Scissors", humanScore, computerScore);
+        changeResultDisplay("You Lose! Rock\nBeats Scissors", humanScore, computerScore);
     }
     
     if (humanChoice === computerChoice){
-        changeResultDisplay("Its a Tie!", humanScore, computerScore);
+        changeResultDisplay("Same Choice\nIt's a Tie!", humanScore, computerScore);
     }
    
 }

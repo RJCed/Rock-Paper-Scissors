@@ -50,20 +50,21 @@
 
 #result{
 
-    /* border: 1px solid red; */
+    border: 1px solid red;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     text-align: center;
 
-    max-width: 600px;
+    max-width: clamp(300px, 700px, 700px);
+    white-space: pre-line;
     
 }
 
 #upperResultText{
     /* border: 1px solid red; */
-    font-size: 3.5vw;
+    font-size: 4.5vw;
     color: #FCBF49;
     font-weight: 1000;
 }
