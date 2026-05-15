@@ -268,7 +268,7 @@ const playRound = function(humanChoice, computerChoice){
 let buttons = document.getElementById('lower');
 //get click event for each button
 buttons.addEventListener('click', (event) => {
-    let target = event.target;
+    let target = event.target.closest('[id]');
 
     //run the getComputerChoice to be used for different functions below
     let computerValue = getComputerChoice();
