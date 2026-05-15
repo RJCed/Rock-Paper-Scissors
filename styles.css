@@ -120,15 +120,32 @@
 }
 
 #lower button{
-    max-width: 210px;
     width: 100%;
+    max-width: 210px;
     aspect-ratio: 1 / 1;
-    line-height: 3.5;
 
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-evenly;
     align-items: center;
+    container-type: inline-size;
+    font-weight: 1000;
+
+    /* font-size: clamp(1rem, 3cqw, 2.5rem); */
 }
+
+#lower button h1{
+    /* border: 1px solid red; */
+    font-size:;
+    aspect-ratio: 1 / 1;
+
+    font-size: 40cqw;
+}
+
+#lower button p{
+    font-size: 15cqw;
+}
+
 
 @media screen and (max-width:480px) {
     #lower button{
