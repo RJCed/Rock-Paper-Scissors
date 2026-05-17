@@ -28,8 +28,11 @@
 
 }
 
-
-
+/* blur background */
+#screen.active{
+    filter: blur(15px);
+    -webkit-filter: blur(15px);
+}
 
 /* Upper Side, includes results, score etc */
 
@@ -158,6 +161,16 @@
 
 /* Pop-up inputRounds */
 
-#inputRounds{
+#inputRounds[open]{
+    backdrop: blur(10px);
+    -webkit-backdrop-filter: blur(8px);
+
     margin: auto;
+    padding: 10px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
