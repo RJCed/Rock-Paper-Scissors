@@ -270,17 +270,27 @@ const blurBackground = function(){
     screen.classList.toggle('active');
 }
 
+//reset game / for play again
+
+const resetGame = function(){
+    humanScore = 0;
+    computerScore = 0;
+    rounds = 1;
+    inputPopup();
+}
+
 // Input for Winning Score (modal pop-up)
 const inputPopup = function(){
     //Show the Dialog
     const dialog = document.querySelector("#inputRounds");
     dialog.showModal()
     // console.log("inputPopup: " + dialog.open);
-    blurBackground()
+    blurBackground();
+    console.log("1 add")
 
     const submit = document.querySelector("#submitScore");
-    submit.addEventListener("click", () => {
-        
+    submit.onclick = () => {
+
         rounds = document.querySelector("#inputScore").value;
 
         //Check if greater than 0
@@ -288,9 +298,38 @@ const inputPopup = function(){
             console.log("Number of Rounds = " + rounds)
             dialog.close();
             blurBackground(); // remove blur
-            // console.log("inputPopup: " + dialog.open);
+            console.log("2 remove")
         }
-    })
+    }
+}
+
+//Outcome who is the winner (model pop-up)
+const outcome = function(outcome, humanScore, computerScore){
+    blurBackground();
+    console.log("3 add")
+
+    const dialog = document.querySelector("#outcome");
+    dialog.showModal();
+
+    //For the h1 (final Result)
+    const result = document.querySelector("#finalResult");
+    result.textContent = outcome;
+
+    //For the h2 (final Score)
+    const score = document.querySelector("#finalScore");
+    const finalScore = 
+    score.textContent = "You: " + humanScore + " Computer: " + computerScore;
+
+    //For Play Again
+
+    const playAgain = document.querySelector("#playAgain");
+    playAgain.onclick = () => {
+        blurBackground();
+        console.log("4 remove")
+        resetGame()
+        dialog.close()
+    }
+
 }
 
 //Get the user input (from buttons) and run playRound, changeChoiceDisplay
@@ -339,9 +378,9 @@ const playGame = function(){
 
         //Check winner based on who makes it to winning score first
         if (humanScore >= rounds){
-            alert("You WIn!")
+            outcome("You Win!", humanScore, computerScore)
         } else if (computerScore >= rounds){
-            alert("You Lose!")
+            outcome("You Lose!", humanScore, computerScore)
         }
 
     });
