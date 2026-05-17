@@ -159,6 +159,7 @@
 
 let humanScore = 0;
 let computerScore = 0;
+let rounds = 1;
 
 
 //Get Computer Choice
@@ -264,6 +265,29 @@ const playRound = function(humanChoice, computerChoice){
 }
 
 
+// Input for Winning Score (modal pop-up)
+const inputPopup = function(){
+    //Show the Dialog
+    const dialog = document.querySelector("#inputRounds");
+    dialog.showModal()
+
+    const submit = document.querySelector("#submitScore");
+    submit.addEventListener("click", () => {
+        rounds = document.querySelector("#inputScore").value;
+
+        //Check if greater than 0
+        if (Number.isInteger(Number(rounds)) && rounds > 0){
+            console.log("Number of Rounds = " + rounds)
+            dialog.close()
+        }
+    })
+}
+
+
+
+
+inputPopup()
+
 // Event for What button is clicked (Uses the "lower" id as a reference)
 let buttons = document.getElementById('lower');
 //get click event for each button
@@ -289,7 +313,5 @@ buttons.addEventListener('click', (event) => {
             break;
     }
 });
-
-
 
 

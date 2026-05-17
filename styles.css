@@ -154,3 +154,10 @@
         aspect-ratio: 1 / 1;
     }
 }
+
+
+/* Pop-up inputRounds */
+
+#inputRounds{
+    margin: auto;
+}
