@@ -159,7 +159,7 @@
 
 let humanScore = 0;
 let computerScore = 0;
-let rounds = 1; //In this case rounds mean winning score
+let rounds = 1; //In this case rounds means Winning Score
 
 
 //Get Computer Choice
@@ -261,7 +261,7 @@ const playRound = function(humanChoice, computerChoice){
     if (humanChoice === computerChoice){
         changeResultDisplay("Same Choice\nIt's a Tie!", humanScore, computerScore);
     }
-   
+
 }
 
 //blur background
@@ -270,13 +270,12 @@ const blurBackground = function(){
     screen.classList.toggle('active');
 }
 
-
 // Input for Winning Score (modal pop-up)
 const inputPopup = function(){
     //Show the Dialog
     const dialog = document.querySelector("#inputRounds");
     dialog.showModal()
-    console.log("inputPopup: " + dialog.open);
+    // console.log("inputPopup: " + dialog.open);
     blurBackground()
 
     const submit = document.querySelector("#submitScore");
@@ -289,36 +288,74 @@ const inputPopup = function(){
             console.log("Number of Rounds = " + rounds)
             dialog.close();
             blurBackground(); // remove blur
-            console.log("inputPopup: " + dialog.open);
+            // console.log("inputPopup: " + dialog.open);
         }
     })
 }
 
+//Get the user input (from buttons) and run playRound, changeChoiceDisplay
+let currentRound = 0;
+const playGame = function(){
+    let buttons = document.getElementById('lower');
 
-let buttons = document.getElementById('lower');
-//get click event for each button
-buttons.addEventListener('click', (event) => {
-    let target = event.target.closest('[id]');
+    //get click event for each button / User Choice
+    buttons.addEventListener('click', (event) => {
+        let target = event.target.closest('[id]');
 
-    //run the getComputerChoice to be used for different functions below
-    let computerValue = getComputerChoice();
+        if (!target) return;
 
-    //
-    switch(target.id) {
-        case 'rock':
-            playRound("rock", computerValue)
-            changeChoiceDisplay("rock", computerValue);
-            break;
-        case 'paper':
-            playRound("paper", computerValue);
-            changeChoiceDisplay("paper", computerValue);
-            break;
-        case 'scissors':
-            playRound("scissors", computerValue);
-            changeChoiceDisplay("scissors", computerValue);
-            break;
-    }
-});
+        //run the getComputerChoice to be used for different functions below
+        let computerValue = getComputerChoice();
+
+
+        //
+        switch(target.id) {
+            case 'rock':
+                playRound("rock", computerValue)
+                changeChoiceDisplay("rock", computerValue);
+                break;
+            case 'paper':
+                playRound("paper", computerValue);
+                changeChoiceDisplay("paper", computerValue);
+                break;
+            case 'scissors':
+                playRound("scissors", computerValue);
+                changeChoiceDisplay("scissors", computerValue);
+                break;
+        }
+        
+        currentRound++;
+
+        //Check winner based on the number of rounds
+        // if (currentRound >= rounds){
+        //     if (humanScore > computerScore) {
+        //     alert("You Win!");
+        //     } else if (humanScore < computerScore) {
+        //         alert("You Lose!");
+        //     } else {
+        //         alert("Its A Tie!");
+        //     }
+        // }
+
+        //Check winner based on who makes it to winning score first
+        if (humanScore >= rounds){
+            alert("You WIn!")
+        } else if (computerScore >= rounds){
+            alert("You Lose!")
+        }
+
+    });
+    
+
+}
+
+inputPopup();
+playGame();
+
+
+
+
+
 
 
 
