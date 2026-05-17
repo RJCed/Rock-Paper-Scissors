@@ -276,6 +276,8 @@ const resetGame = function(){
     humanScore = 0;
     computerScore = 0;
     rounds = 1;
+    changeChoiceDisplay("rock", "rock");
+    changeResultDisplay("Rock Paper Scissors", humanScore, computerScore);
     inputPopup();
 }
 
