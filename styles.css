@@ -162,12 +162,72 @@
 /* Pop-up inputRounds */
 
 #inputRounds[open]{
-    backdrop: blur(10px);
-    -webkit-backdrop-filter: blur(8px);
-
     margin: auto;
     padding: 10px;
     
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 2vw;
+    border-radius: 10px;
+    border-color: #D62828;
+
+    box-shadow: 0 0 10px #FCBF49;
+    border: 2px solid #F77F00;
+}
+
+#inputRounds h1{
+    font-size: 4vw;
+    color: #FCBF49;
+    font-weight: 1000;
+    margin: 0 10px;
+}
+
+
+
+#inputRounds div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+#inputRounds div label{
+    font-size: clamp(10px, 2vw, 2vw);
+    color: #F77F00;
+    font-weight: 900;
+}
+
+#inputScore{
+    width: 20vw;
+    height: 3vw;
+    padding: 10px;
+
+    font-size: 2vw;
+    color: #FCBF49;
+    font-weight: 600;
+}
+
+#submitScore{
+    width: clamp(10vw, 15vw, 15vw);
+    height: clamp(3vw, 4vw, 4vw);
+
+    font-size: 2vw;
+    color: #F77F00;
+    font-weight: 900;
+    box-shadow: 0 0 5px #F77F00;
+    border: 2px solid #F77F00;
+    border-radius: 40px;
+}
+
+/* Pop-up outcome */
+
+#outcome[open]{
+    margin: auto;
+    padding: 10px;
+
     display: flex;
     flex-direction: column;
     justify-content: center;

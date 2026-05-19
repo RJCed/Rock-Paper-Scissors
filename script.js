@@ -319,7 +319,6 @@ const outcome = function(outcome, humanScore, computerScore){
 
     //For the h2 (final Score)
     const score = document.querySelector("#finalScore");
-    const finalScore = 
     score.textContent = "You: " + humanScore + " Computer: " + computerScore;
 
     //For Play Again
