@@ -159,7 +159,7 @@
 }
 
 
-/* Pop-up inputRounds */
+/* Pop-up inputRounds (also some output are linked) */
 
 #inputRounds[open]{
     margin: auto;
@@ -177,7 +177,7 @@
     border: 2px solid #F77F00;
 }
 
-#inputRounds h1{
+#inputRounds h1, #outcome h1{
     font-size: 4vw;
     color: #FCBF49;
     font-weight: 1000;
@@ -194,7 +194,7 @@
     width: 100%;
 }
 
-#inputRounds div label{
+#inputRounds div label, #outcome h2{
     font-size: clamp(10px, 2vw, 2vw);
     color: #F77F00;
     font-weight: 900;
@@ -210,7 +210,7 @@
     font-weight: 600;
 }
 
-#submitScore{
+#submitScore, #playAgain{
     width: clamp(10vw, 15vw, 15vw);
     height: clamp(3vw, 4vw, 4vw);
 
@@ -230,9 +230,25 @@
     margin: auto;
     padding: 10px;
 
+    width: 40vw;
+
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     gap: 10px;
+
+    border-color: #D62828;
+    box-shadow: 0 0 10px #FCBF49;
+    border: 2px solid #F77F00;
+
+    border-radius: 15px;
+}
+
+#playAgain{
+    width: clamp(7vw, 10vw, 10vw);
+    height: clamp(3vw, 4vw, 4.5vw);
+    font-size: 1.3vw;
+
+    margin: 1vw 0;
 }
