@@ -389,6 +389,8 @@ const playGame = function(){
 
 }
 
+
+
 inputPopup();
 playGame();
 
